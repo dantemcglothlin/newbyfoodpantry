@@ -1,0 +1,16 @@
+html {
+    height: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+/* Make the body take full height */
+
+/* This will ensure the main content takes the full available height */
+body {
+display: flex;
+flex-direction: column;
+padding-bottom: 60px; /* Ensure the footer doesn't overlap content */
+}
+main {
+    flex: 1; /* This allows the main content to grow and take up remaining space */
+}

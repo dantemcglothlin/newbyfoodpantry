@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 401</title>
+    <link rel="icon" href="../../assets/images/Lebnaz-logo-sq.png">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/secondary.css">
+    <script src="../../assets/js/main.js" defer></script>
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <main id="errorPage" style="background-size: cover; background-position: center; opacity: 100%; height: 100vh;">
+        <div class="text-white flex flex-col justify-center items-center h-screen space-y-4">
+            <h4 class="text-4xl font-semibold">401</h4>
+            <h1 class="text-6xl font-bold">Unauthorized</h1>
+            <h4 class="text-gray-200 font-semibold">Sorry, you don't have authorization to access this page.</h4>
+            <div class="flex space-x-8 mt-8"> <!-- Container to hold both buttons -->
+                <a href="#https://newbyfoodpantry.com" class="font-bold hover:opacity-85 transition duration-200">                <!--Remove '#'-->
+                    <span aria-hidden="true">←</span>
+                    Back to home
+                </a>
+                <a href="#https://newbyfoodpantry.com/support" class="font-bold hover:opacity-85 transition duration-200">                <!--Remove '#'-->
+                    Contact Support
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+        <script>
+            const backgrounds = [
+                '../../assets/images/errorpg1.jpg',
+                '../../assets/images/errorpg2.jpg',
+                '../../assets/images/errorpg3.jpg'
+            ];
+            const randomIndex = Math.floor(Math.random() * backgrounds.length);
+            const randomBackground = backgrounds[randomIndex];
+            document.getElementById('errorPage').style.backgroundImage = `url('${randomBackground}')`;
+        </script>
+    </main>    
+</body>
+</html>

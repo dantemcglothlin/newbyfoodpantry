@@ -1,0 +1,244 @@
+:root[data-theme="light"] {
+  --text: #2c2c2c; /* Darker text for better readability */
+  --background: #f4f3f5; /* Light gray background */
+  --background-footer: #f4f3f5; /* Dark maroon background */
+  --text-footer: #1e1b1d; /* Light gray background */
+  --border-br: 0.75rem;
+  --border-bl: 0.75rem;
+  --primary: #b93c7a; /* Soft rose pink */
+  --primary-alt: #9c6d87;
+  --secondary: #d6b28c; /* Warm beige */
+  --accent: #191b17; /* Soft sage green */
+  --banner: rgba(255, 255, 255, 0.85); /* Subtle off-white for banner */
+  --logo: rgba(156, 109, 135, 0.3); /* Slightly faded pinkish hue for logo */
+  --switch: #b1c88d; /* Matching soft sage green for switch */
+  --gradient-w-b: to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0);
+  --event-bg: rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="dark"] {
+  --text: #f1f1f1; /* Soft white text for dark mode */
+  --background: #292929; /* Dark maroon background */
+  --background-footer: #c8c8c8; /* Dark maroon background */
+  --text-footer: rgb(36, 33, 35); /* Dark maroon background */
+  --border-br: 0.75rem;
+  --border-bl: 0.75rem;
+  --primary: #9c6d87; /* Muted pinkish brown */
+  --primary-alt: #b93c7a; /* Soft rose pink */
+  --secondary: #4e3a23; /* Dark brown */
+  --accent: #788a5a; /* Muted olive green */
+  --banner: rgba(255, 255, 255, 0.1); /* Subtle light banner for dark theme */
+  --logo: rgba(156, 109, 135, 0.4); /* Slightly less faded pinkish hue for logo */
+  --switch: #9c6d87; /* Soft rose pink for switch */
+  --gradient-w-b: to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0);
+  --event-bg: rgba(129, 129, 129, 0.5);
+}
+
+html {
+  background-color: var(--background);
+  color: var(--text);
+}
+html, body {
+  height: 100%;
+  margin: 0;  /* Ensure no margins */
+}
+
+
+br {
+  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+}
+
+#banner {
+  background-color: var(--banner);
+  border-bottom-left-radius: var(--border-bl);
+  border-bottom-right-radius: var(--border-br);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--switch);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider-container {
+  position: relative;
+  width: 50%;  /* Adjust slider to take up 75% width */
+  height: 65vh;
+  margin: 0 auto;  /* Center the slider */
+  overflow: hidden;
+  box-shadow: 0 4px 10px var(--background); /* Optional: add shadow for a floating effect */
+  border-radius: 1rem;
+}
+
+.slider-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.slider-buttons button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5rem;
+  opacity: 0.7;
+}
+
+.slider-buttons button:hover {
+  opacity: 1;
+}
+
+/* Faded effect at the bottom */
+.fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(var(--gradient-w-b));
+}
+
+/* Overlay with text for events */
+.event-overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 33%;
+  background: var(--event-bg);  /* Semi-transparent background */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 350px;
+  z-index: 2;
+  backdrop-filter: blur(10px);  /* Apply blur effect to background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
+}
+
+.navbar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 15px;
+  margin-left: 500px; /* Adjust navbar tabs to the right */
+}
+
+.navbar a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  transition: background 0.3s;
+  border-radius: 0.5rem;
+}
+
+.navbar a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#donateBtn {
+  font-size: 18px;
+  padding: 12px 20px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#donateBtn:hover {
+  background-color: var(--primary-alt);
+}
+
+/* Adjust textLogo to be 5rem to the right of the logo */
+#textLogo {
+  margin-left: 5rem;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: -50%;
+  width: 100%;
+  height: 20%;
+  background-color: var(--text-footer);
+  color: var(--background-footer);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  z-index: 100;
+}
+
+.footer-content p {
+  margin: 0;
+}
+#copyright {
+  justify-content: center;
+}
+#pages {
+  margin-top: 2.75rem;
+  position: absolute;
+  left: 25rem;
+}
+#socialMedia {
+  margin-top: 1.25rem;
+  position: absolute;
+  right: 25rem;
+}

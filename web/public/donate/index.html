@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="icon" href="../../assets/images/Lebnaz-logo-sq.png">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/secondary.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <script src="../../assets/js/main.js" defer></script>
+    <script src="../script/main.js" defer></script>
+    <style>
+        /* Centered donation container */
+        .donation-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .donation-header {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .price-options, .custom-amount {
+            margin-bottom: 10px;
+        }
+
+        .price-options label, .custom-amount label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .price-options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .custom-amount input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .donation-methods {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .donation-methods button {
+            background: #f0f0f0;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .donation-methods button:hover {
+            background-color: #ddd;
+        }
+
+        #paypal {
+            width: 35px;
+            height: 35px;
+        }
+        #visa {
+            width: 65px;
+            height: 30px;
+        }
+        #mastercard {
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="flex p-2 justify-between items-center" id="banner">
+            <a href="https://newbyfoodpantry.com" class="flex ml-20 w-fit pl-4 pr-4 pt-2 pb-2 rounded-4xl" id="logo" draggable="false">
+                <img src="../../assets/images/Lebnaz-logo-color.png" class="h-12 cursor-pointer hover:opacity-85 transition duration-100" draggable="false">
+            </a>
+
+            <!-- Adjusted textLogo with margin to the right -->
+            <a href="https://newbyfoodpantry.com" class="flex mt-3 ml-8 w-fit" id="textLogo" draggable="false">
+                <img src="../../assets/images/text.png" class="w-80 h-10 cursor-pointer" draggable="false">
+            </a>
+
+            <!-- Navbar -->
+            <div class="navbar">
+                <a href="../appointments" draggable="false">Appointments</a>
+                <a href="../volunteer" draggable="false">Volunteer</a>
+                <a href="../partners" draggable="false">Partners</a>
+                <a href="../about" draggable="false">About</a>
+                <a href="../donate" id="donateBtn" draggable="false">Donate</a>
+            </div>
+
+            <!-- Switch aligned to the right with margin of 4 using Tailwind classes -->
+            <label class="switch mr-4" title="Dark/Light Mode">
+                <input type="checkbox" onchange="themeChange()">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <br><br><br><br><br>
+
+        <!-- Donation Centered Section -->
+        <div class="donation-container">
+            <div class="donation-header">
+                <h3>Make a Donation</h3>
+            </div>
+
+            <!-- Donation Methods -->
+            <script async
+                src="https://js.stripe.com/v3/buy-button.js">
+            </script>
+
+            <stripe-buy-button
+                buy-button-id="buy_btn_1R5n4l2MhO1D2woU32WH7s04"
+                publishable-key="pk_live_51R5mlz2MhO1D2woU8VCVHlExT7NvVcyTLfWfqetaG4gvSvVJqfvL2Achia8yADC1vQkPj2kOOi2zxDYgvDWtDEyL00VZbz8rPK">
+            </stripe-buy-button>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div id="pages">
+                    <ul>
+                        <li><a href="../appointments">Appointments</a></li>
+                        <li><a href="../volunteer">Volunteer</a></li>
+                        <li><a href="../about">About Us</a></li>
+                        <li><a href="../donate">Donate</a></li>
+                        <li><a href="../partners">Partners</a></li>
+                    </ul>
+                </div>
+                <br>
+                <div class="footer-bottom">
+                    <div class="social-media" id="socialMedia">
+                        <a href="#https://facebook.com/newbyfoodpantry" target="_blank">Facebook</a> |
+                        <a href="#https://twitter.com/newbyfoodpantry" target="_blank">Twitter</a> |
+                        <a href="#https://instagram.com/newbyfoodpantry" target="_blank">Instagram</a>
+                    </div>
+                    <br>
+                    <p id="copyright">&copy; 2025 Newby Food Pantry. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
